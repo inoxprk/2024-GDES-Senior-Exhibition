@@ -764,3 +764,113 @@ element.style {
     height: 21.6vh;
     text-align: center;
 }
+
+
+.room-preview {
+    position: absolute;
+    width: 10%; /* Adjust based on your layout size */
+    height: auto;
+    /* Optional: Add more styling here */
+}
+
+.room-preview img {
+    width: 100%;
+    height: auto;
+}
+
+.house-layout {
+    position: relative;
+    /* Layout styling */
+}
+
+.room-preview {
+    display: none; /* Hide room previews by default */
+    position: absolute;
+    /* Positioning inside .house-layout */;
+      filter: grayscale(100%) contrast(1000%);
+
+}
+
+/* Hover effect to show the room */
+li:hover + .house-layout .room-preview,
+li:focus-within + .house-layout .room-preview {
+    display: block; /* Show on hover */
+}
+
+/* Specific positioning for each room if needed */
+#entry-preview { /* Positioning example */ }
+#office-preview { /* Positioning example */ }
+
+.house-layout {
+  position: relative;
+  width: 600px; /* Adjust based on your layout size */
+  height: 1000px; /* Adjust based on your layout size */
+  margin: 0 auto; /* Center the layout */
+  background: url('layout.jpg') no-repeat center/cover; /* Optional: A background image of the floor plan */
+}
+
+.room-navigation2 li a {
+  position: absolute;
+  display: block;
+  color: #333; /* Room link text color */
+  /* Additional styles for appearance */
+}
+
+/* Corrected positions for each room link based on given positions */
+.room-navigation2 li:nth-child(1) a { top: 10vh; left: 11.5vw; }
+.room-navigation2 li:nth-child(2) a { top: 47.6vh; left: 35.9vw; }
+.room-navigation2 li:nth-child(3) a { top: 57.2vh; left: 54.7vw; }
+.room-navigation2 li:nth-child(4) a { top: 81vh; left: 33vw; }
+.room-navigation2 li:nth-child(5) a { top: 85vh; left: 53.8vw; }
+.room-navigation2 li:nth-child(6) a { top: 109.5vh; left: 52.5vw; }
+.room-navigation2 li:nth-child(8) a { top: 109.5vh; left: 33.6vw; }
+/* Add or adjust other positions as needed */
+
+.room-preview {
+  display: none; /* Hide room previews by default */
+  position: absolute;
+  width: 100%; /* Full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  top: 0;
+  left: 0;
+}
+
+/* Adjust hover effect to display the room images */
+.room-navigation2 li:hover + .house-layout .room-preview,
+.room-navigation2 li:focus-within + .house-layout .room-preview {
+  display: block;
+}
+
+/* Specific styling adjustments for background colors and alignments */
+#main-content > nav > ul > li:nth-child(1) > a { background-color: yellow; }
+#main-content > nav > ul > li:nth-child(8) > a { background-color: blue; }
+#main-content > nav > ul > li:nth-child(6) > a { background-color: green; }
+/* Continue for other list items */
+
+.room-preview {
+  filter: grayscale(100%) contrast(300%);
+}
+
+img#entry-preview {
+    width: 180px;
+    margin-left: 300px;
+    margin-top: 56px;
+    height: 104.2px;
+}
+
+img#office-preview {
+    width: 140px;
+    height: 200px;
+    margin-top: 270px;
+    margin-left: 180px;
+}
+
+.spotlight {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(244, 242, 132, 1) 0%, rgba(255,255,255,0) 70%);
+        pointer-events: none;
+        mix-blend-mode: screen;
+    }
