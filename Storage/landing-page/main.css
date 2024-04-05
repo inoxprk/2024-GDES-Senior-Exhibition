@@ -1,0 +1,709 @@
+* {
+    box-sizing: border-box;
+}
+
+/* madison b tran */
+
+body {
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'neue-haas-unica';
+}
+
+.main-container {
+    /* background-color: maroon; */
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.wrapper {
+    /* background-color: pink; */
+    width: 80vw;
+    height: 49vw;
+
+    display: flex;
+    /* justify-content: space-between;
+    align-items: center; */
+}
+
+.left {
+    width: 75%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.right {
+    width: 25%;
+    height: 100%;
+}
+
+.row {
+    /* background-color: pink; */
+    /* border-bottom: black solid 1px; */
+
+    width: 100%;
+    height: 33.333%;
+
+    display: flex;
+
+}
+
+/* ATTIC */
+
+/* .triangle-img {
+    max-width: 100%;
+    max-height: 100%;
+} */
+
+.attic {
+    background-color: white;
+    border-right: solid black 2px;
+    border-left: solid black 2px;
+    border-top: solid black 2px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+}
+
+.attic:hover {
+    background-color: #ffc60a;
+    transition: 1s;
+}
+
+/* TOP FLOOR */
+
+.closet {
+    background-color: white;
+    border-right: solid black 2px;
+    border-left: solid black 2px;
+    border-top: solid black 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 16.667%;
+    height: 100%;
+}
+
+.closet:hover {
+    background-color: #ffc60a;
+    transition:1s;
+}
+
+.bedroom {
+    background-color:white;
+    border-right: solid black 2px;
+    border-top: solid black 2px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 50%;
+    height: 100%;
+}
+
+
+
+/* LADDER */
+.ladder {
+    width: 20%;
+    height: 100%;
+    border-left: solid black 2px;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ladder-wrapper {
+    width:60%;
+    height:85%;
+    /* background-color: aqua; */
+
+    border-left: solid black 2px;
+    border-right: solid black 2px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ladder-rung {
+    height:1%;
+    width: 100%;
+    /* background-color: blue; */
+    border-bottom: black solid 2px;
+
+}
+
+.bottom {
+    border-bottom: black solid 2px;
+}
+
+.bedroom-type {
+    width: 80%;
+    height: 100%;
+    /* border: solid black 2px; */
+    background-color: white;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bedroom-type:hover {
+    background-color: #ffc60a;
+    transition: 1s;
+}
+
+.study {
+    background-color:white;
+    border-right: solid black 2px;
+    border-top: solid black 2px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 33.3333%;
+    height: 100%;
+}
+
+.study:hover {
+    background-color: #ffc60a;
+    transition:1s;
+}
+
+/* BOTTOM FLOOR */
+
+.living-room {
+    background-color: white;
+    border-right: solid black 2px;
+    border-left: solid black 2px;
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    height: 100%;
+}
+
+.living-room:hover {
+    background-color: #ffc60a;
+    transition:1s;
+}
+
+.kitchen {
+    background-color: white;
+    border-right: solid black 2px;
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 26.667%;
+    height: 100%;
+}
+
+.kitchen:hover {
+    background-color: #ffc60a;
+    transition:1s;
+}
+
+.dining-room {
+    background-color: white;
+    border-right: solid black 2px;
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 33.3333%;
+    height: 100%;
+}
+
+.dining-room:hover {
+    background-color: #ffc60a;
+    transition:1s;
+}
+/* GARAGE */
+
+.garage {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-right: solid black 2px;
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.garage:hover {
+    background-color: #ffc60a;
+    transition:1s;
+}
+
+/* BACKYARD */
+
+.backyard-wrapper {
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.backyard {
+    /* background-color: blue; */
+    width: 80%;
+    height: 140%;
+    border: solid black 2px;
+
+    display: flex;
+    justify-content:center;
+    align-items: flex-end;
+}
+
+.tree-wrapper {
+    /* background-color: beige; */
+    width: 70%;
+    height: 90%;
+/* 
+    display: flex;
+    flex-direction: column; */
+}
+
+.leaves {
+    width: 100%;
+    height: 80%;
+    /* background-color: pink; */
+    border: solid black 2px;
+    border-radius: 100%;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.inner-trunk {
+    width: 0%;
+    height: 50%;
+    border-right: solid black 2px;
+    position: relative;
+}
+
+.trunk-wrapper {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trunk {
+    width: 0%;
+    height: 100%;
+    border-right: solid black 2px;
+    position: relative;
+    
+}
+
+/* NIGHTMODE */
+
+.nightmode-button {
+    background-color: white;
+    border: black 2px solid;
+    width: 90px;
+    height: 90px;
+    position: relative;
+    left: 85%;
+    top: 25%;
+}
+
+
+/* MIDDLE SIZE */
+
+@media screen and (min-width: 600px) {
+    .floor {
+        display:none;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    .main-container {
+        background-color:white;
+        display: flex;
+
+        height: 120vw;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper {
+        width: 70vw;
+        height: 100vw;
+
+        flex-direction: column;
+    }
+
+    .a {
+        display: none;
+    }
+   
+    .floor {
+        /* background-color: yellow; */
+        width: 100%;
+        height: 20%;
+
+        border-bottom: solid black 2px;
+    
+        display: flex;
+    }
+
+    .attic-2 {
+        background-color: white;
+        border-left: solid black 2px;
+        border-right: solid black 2px;
+        border-top: solid black 2px;
+
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .attic-2:hover {
+        background-color: #ffc60a;
+        transition: 1s;
+    }
+
+    .closet-2 {
+        background-color: white;
+        border-right: solid black 2px;
+
+        width: 30%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .closet-2:hover {
+        background-color: #ffc60a;
+        transition: 1s;
+    }
+
+    .bedroom-2 {
+        background-color:white;
+        border-right: solid black 2px;
+        border-left: solid black 2px;
+
+        width: 70%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bedroom-2:hover {
+        background-color: #ffc60a;
+        transition: 1s;
+    }
+
+    .study-2 {
+        background-color: white;
+        border-right: solid black 2px;
+        border-left: solid black 2px;
+
+        width: 50%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .study-2:hover {
+        background-color: #ffc60a;
+        transition: 1s;
+    }
+
+    .livingroom-2 {
+        background-color: white;
+        border-right: solid black 2px;
+
+        width: 50%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .livingroom-2:hover {
+        background-color: #ffc60a;
+        transition: 1s;
+    }
+
+    .kitchen-2 {
+        background-color: white;
+        border-right: solid black 2px;
+        border-left: solid black 2px;
+
+        width: 60%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .kitchen-2:hover {
+        background-color: #ffc60a;
+        transition: 1s;
+    }
+
+    .diningroom-2 {
+        background-color: white;
+        border-right: solid black 2px;
+
+        width: 40%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .diningroom-2:hover {
+        background-color: #ffc60a;
+        transition: 1s;
+    }
+
+    .garage-2 {
+        background-color: white;
+        border-left: solid black 2px;
+        border-right: solid black 2px;
+
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .garage-2:hover {
+        background-color: #ffc60a;
+        transition: 1s;
+    }
+
+
+
+}
+
+/* MOBILE SIZE */
+
+@media screen and (max-width: 600px) {
+    .floor {
+        display:none;
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+    .mobile-house-wrapper {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+
+
+    .main-container {
+        background-color: white;
+        height: 500vw;
+
+        display: flex;
+    }
+
+    .floor {
+        display: none;
+    }
+
+    .wrapper {
+        width: 85vw;
+        height: 500vw;
+        /* background-color: aquamarine; */
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-house-wrapper {
+        /* background-color: blueviolet; */
+        height: 95%;
+        width: 100%;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .square {
+        width: 100%;
+        height: 12.5%;
+        /* background-color: cornflowerblue; */
+        border-bottom: solid black 2px;
+
+    }
+
+    .square:hover {
+        background-color: #ffc60a;
+        transition: 1s;
+    }
+
+    .triangle-img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .attic-3 {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-left: solid black 2px;
+        border-right: solid black 2px;
+        border-top: solid black 2px;
+    }
+
+    .bedroom-3 {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-left: solid black 2px;
+        border-right: solid black 2px;
+    }
+
+    .closet-3 {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        border-left: solid black 2px;
+        border-right: solid black 2px;
+
+    }
+
+    .study-3 {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-left: solid black 2px;
+        border-right: solid black 2px;
+    }
+
+    .livingroom-3 {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-left: solid black 2px;
+        border-right: solid black 2px;
+    }
+
+    .diningroom-3 {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-left: solid black 2px;
+        border-right: solid black 2px;
+    }
+
+    .kitchen-3 {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-left: solid black 2px;
+        border-right: solid black 2px;
+    }
+
+    .garage-3 {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-left: solid black 2px;
+        border-right: solid black 2px;
+    }
+
+
+}
