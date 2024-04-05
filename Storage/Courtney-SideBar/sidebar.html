@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>title</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.typekit.net/oom6xvm.css">
+    </head>
+    <body>
+        <div class="container">
+            <button id="openSidebarBtn" class="rotateButton">DIRECTORY</button>
+            <div id="sidebar">
+              <button id="closeSidebarBtn">&times;</button>
+              <div class="sidebartitle">SENIOR SHOW INDEX</div>
+              <ul>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="class-names">
+                        <a href="">
+                            Name
+                            <div class="project-title">
+                                Project Title
+                            </div>
+                            </a>
+                    </div>
+                </li>
+              </ul>
+            </div>
+            <div id="mainContent">
+              <!-- Your main content here -->
+            </div>
+          </div>
+        <script>
+        const openSidebarBtn = document.getElementById('openSidebarBtn');
+            const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+            const sidebar = document.getElementById('sidebar');
+
+            let sidebarOpen = false;
+
+            openSidebarBtn.addEventListener('click', () => {
+            if (!sidebarOpen) {
+                sidebar.style.right = '0';
+                sidebarOpen = true;
+            } else {
+                sidebar.style.right = '-350px';
+                sidebarOpen = false;
+            }
+        });
+
+        closeSidebarBtn.addEventListener('click', () => {
+            sidebar.style.right = '-350px';
+            sidebarOpen = false;
+        });
+
+        </script>
+    </body>
+</html>
