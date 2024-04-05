@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'neue-haas-unica'
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    max-width:100%;
+}
+
+.logoBox {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 80vh;
+}
+
+.logo {
+    max-height: 100vh;
+}
