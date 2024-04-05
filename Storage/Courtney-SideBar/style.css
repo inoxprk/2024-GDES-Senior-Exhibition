@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width:100%;}
+
+body, html {
+    font-family: 'neue-haas-unica';
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+  }
+  
+#sidebar {
+  position: fixed;
+  top: 0;
+  right: -350px; /* Initially hidden */
+  width: 350px;
+  height: 100%;
+  background-color: rgb(242, 242, 242);
+  color:black;
+  transition: right 0.3s ease;
+  margin: 0; /* Remove any margin */
+  padding: 25px; /* Remove padding */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  overflow-y:scroll;
+}
+
+  #sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #sidebar li {
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+  }
+  
+  #sidebar li:hover {
+    background-color: #d7d7d7;
+  }
+  
+  #closeSidebarBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  #openSidebarBtn {
+    position: absolute;
+    top: 50%;
+    left:0;
+    background-color:white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transform-origin: center;
+  }
+  
+  .rotateButton {
+    transform: rotate(-90deg);
+  }
+  
+  #mainContent {
+    margin-left: 350px; /* Adjust this value based on your sidebar width */
+    transition: margin 0.5s ease;
+  }
+  
+  .project-title {
+    font-size:12px;
+  }
+
+  a {
+    text-decoration:none;
+    color:black;
+  }
+
+  a:hover {
+    text-decoration:underline, italic;
+  }
