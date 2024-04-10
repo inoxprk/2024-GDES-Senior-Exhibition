@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>open house landing page</title>
+        <title>home</title>
         <link  rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="https://use.typekit.net/oom6xvm.css">
         <meta name="'viewport" content="width=device-width,initial-scale=1.0">
+    </head>
 
 
 
     <body>
+
+        
         <div class="main-container">
+
+            <div class="header">
+                <a href="index.html" class="logo-link">
+                    <img src="black-secondary-2.3png.png" class="logo">
+                </a>
+                <div class="buttons">
+                    <a href="about.html" id="aboutBtn">ABOUT</a>
+                    <button id="openBtn">DIRECTORY</button>
+                </div>
+            </div>
+
+            <div id="directory" class="slide-out">
+                <div class="directory-content">
+                     <button id="closeBtn">X</button>
+                </div>
+             </div>
+            
 
 
             <div class="wrapper">
@@ -19,14 +39,14 @@
                <div class="left a">
 
                     <div class="row a">
-                        <div class="attic">attic
-                        </div>
+                        <a href="attic.html" class="attic">Attic
+                        </a>
                     </div>
 
                     <div class="row a">
-                        <div class="closet">closet</div>
-                        <div class="bedroom">
-                            <div class="bedroom-type">bedroom</div>
+                        <a href="closet.html" class="closet">Closet</a>
+                        <a href="bedroom.html" class="bedroom">
+                            <div class="bedroom-type">Bedroom</div>
                             <div class="ladder">
                                 <div class="ladder-wrapper">
                                     <div class="ladder-rung"></div>
@@ -36,14 +56,14 @@
                                     <div class="ladder-rung"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="study">study</div>
+                        </a>
+                        <a href="office.html" class="study">Office</a>
                     </div>
 
                     <div class="row a">
-                        <div class="living-room">living room</div>
-                        <div class="kitchen">kitchen</div>
-                        <div class="dining-room">dining room</div>
+                        <a href="living-room.html" class="living-room">Living Room</a>
+                        <a href="kitchen.html" class="kitchen">Kitchen</a>
+                        <a href="dining-room.html" class="dining-room">Dining Room</a>
                     </div>
 
                </div>
@@ -51,40 +71,27 @@
               
                <div class="right a">
 
-                    <div class="row a">
                         <div class="backyard-wrapper">
-                            <div class="backyard">
-                                <div class="tree-wrapper">
-                                    <div class="leaves">
-                                        <div class="inner-trunk"></div>
-                                    </div>
-                                    <div class="trunk-wrapper">
-                                        <div class="trunk"></div>
-                                    </div>
-                                </div>
-                            </div>
+                        
+                            <a href="backyard.html" class="backyard"> Backyard</a>
                         </div>
-                    </div>
-                    <div class="row a">
-                        <div class="nightmode-button">
-                            <div class="nightmode-moon"></div>
-                        </div>
-                    </div>
-                    <div class="row a">
-                        <div class="garage">garage</div>
-                    </div>
+                
 
                </div>
 
                <!-- MIDDLE HOUSE -->
-
-                <div class="floor">
-                    <div class="attic-2">attic</div>             
+               <div class="backyard-2-wrapper">
+                        
+                    <a href="backyard.html" class="backyard-2">Backyard</a>
                 </div>
 
                 <div class="floor">
-                    <div class="bedroom-2">
-                        <div class="bedroom-type">bedroom</div>
+                    <a href="attic.html" class="attic-2">Attic</a>             
+                </div>
+
+                <div class="floor">
+                    <a href="bedroom.html" class="bedroom-2">
+                        <div class="bedroom-type">Bedroom</div>
                         <div class="ladder">
                             <div class="ladder-wrapper">
                                 <div class="ladder-rung"></div>
@@ -94,35 +101,38 @@
                                 <div class="ladder-rung"></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="closet-2">closet</div>
+                    </a>
+                    <a href="closet.html" class="closet-2">Closet</a>
                 </div>
 
                 <div class="floor">
-                    <div class="study-2">study</div>
-                    <div class="livingroom-2">living room</div>
+                    <a href="office.html" class="study-2">Office</a>
+                    <a href="living-room.html" class="livingroom-2">Living Room</a>
                 </div>
 
                 <div class="floor">
-                    <div class="kitchen-2">kitchen</div>
-                    <div class="diningroom-2">dining room</div>
+                    <a href="kitchen.html" class="kitchen-2">Kitchen</a>
+                    <a href="dining-room.html" class="diningroom-2">Dining Room</a>
                 </div>
 
-                <div class="floor">
-                    <div class="garage-2">garage</div>
-                </div>
+
 
                 <!-- MOBILE HOUSE -->
 
                 <div class="mobile-house-wrapper">
 
-                    <div class="square">
-                        <div class="attic-3">attic</div>
+                    <div class="backyard-3-wrapper">
+                        <a href="backyard.html" class="backyard-3">Backyard
+                        </a>
                     </div>
 
                     <div class="square">
-                        <div class="bedroom-3">
-                            <div class="bedroom-type">bedroom</div>
+                        <a href="attic.html" class="attic-3">Attic</a>
+                    </div>
+
+                    <div class="square">
+                        <a href="bedroom.html" class="bedroom-3">
+                            <div class="bedroom-type">Bedroom</div>
                             <div class="ladder">
                                 <div class="ladder-wrapper">
                                     <div class="ladder-rung"></div>
@@ -132,32 +142,29 @@
                                     <div class="ladder-rung"></div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="square">
-                        <div class="closet-3">closet</div>
+                        <a href="closet.html" class="closet-3">Closet</a>
                     </div>
 
                     <div class="square">
-                        <div class="study-3">square</div>
+                        <a href="office.html" class="study-3">Office</a>
                     </div>
 
                     <div class="square">
-                        <div class="livingroom-3">living room</div>
+                        <a href="living-room.html" class="livingroom-3">Living Room</a>
                     </div>
 
                     <div class="square">
-                        <div class="diningroom-3">dining room</div>
+                        <a href="dining-room.html" class="diningroom-3">Dining Room</a>
                     </div>
 
                     <div class="square">
-                        <div class="kitchen-3">kitchen</div>
+                        <a href="kitchen.html" class="kitchen-3"> Kitchen</a>
                     </div>
 
-                    <div class="square">
-                        <div class="garage-3">garage</div>
-                    </div>
 
                 </div>
 
@@ -165,6 +172,7 @@
             </div>
 
         </div>
+        <script src="script.js"></script>
 
     </body>
     </html>
