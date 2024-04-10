@@ -2,37 +2,174 @@
     box-sizing: border-box;
 }
 
-/* madison b tran */
 
 body {
     margin: 0;
 
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh; */
     font-family: 'neue-haas-unica';
+}
+
+
+a {
+    color: black;
+    text-decoration: none; /* Remove underline */
+    font-family: 'CustomerCopy', sans-serif;
+    font-size: 17pt;
 }
 
 .main-container {
     /* background-color: maroon; */
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+    /* margin-top: 100px; */
+
+}
+
+/* HEADER */
+
+.header {
+    width: 100vw;
+    height: 70px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+
+    border-bottom: 2px solid black;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    max-height: 35px; /* Set the maximum height of the logo */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 25px; 
+}
+
+.buttons {
+    height: 100%;
+    width: 400px;
+    /* background-color: blue; */
+    margin-right: 20px;
+
+    display: flex;
+    justify-content: end;
     align-items: center;
 }
+
+#openBtn {
+    padding: 14px 20px;
+    background-color: white;
+    color: black;
+    border: black 1.5px solid;
+    cursor: pointer;
+    right: 20px;
+
+    font-family: "neue-haas-unica";
+    font-weight: 500;
+    font-size: 8pt;
+
+}
+
+#openBtn:hover {
+    background-color: #ffc60a;
+    transition: 1s;
+}
+
+#aboutBtn {
+    padding: 14px 20px;
+    background-color: white;
+    color: black;
+    border: black 1.5px solid;
+    cursor: pointer;
+
+    margin-right: 10px;
+    
+    font-family: "neue-haas-unica";
+    font-weight: 500;
+    font-size: 8pt;
+}
+
+#aboutBtn:hover {
+    background-color: #ffc60a;
+    transition: 1s;
+}
+
+.directory-content {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: end;
+}
+
+#closeBtn {
+    padding:5px 14px;
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    background-color: white;
+    color: black;
+    border: black 1.5px solid;
+    cursor: pointer;
+
+    margin-right: 10px;
+    
+    font-family: "neue-haas-unica";
+    font-weight: 500;
+    font-size: 8pt;
+}
+
+#closeBtn:hover {
+    background-color: #ffc60a;
+    transition: 1s;
+}
+
+.slide-out {
+    position: fixed;
+    bottom: -100%; /* Initially hidden below the screen */
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    border-top: 2px solid black;
+    transition: bottom 0.3s ease-in-out;
+}
+
+.slide-in {
+    bottom: 0; /* Slide in from the bottom */
+}
+
+/* HOUSE */
 
 
 .wrapper {
     /* background-color: pink; */
-    width: 80vw;
-    height: 49vw;
+    width: 83vw;
+    height: 47vw;
 
     display: flex;
-    /* justify-content: space-between;
-    align-items: center; */
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 90px;
 }
 
 .left {
@@ -61,10 +198,6 @@ body {
 
 /* ATTIC */
 
-/* .triangle-img {
-    max-width: 100%;
-    max-height: 100%;
-} */
 
 .attic {
     background-color: white;
@@ -251,61 +384,63 @@ body {
     background-color: #ffc60a;
     transition:1s;
 }
-/* GARAGE */
 
-.garage {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    border-right: solid black 2px;
-    border-top: solid black 2px;
-    border-bottom: solid black 2px;
-     
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.garage:hover {
-    background-color: #ffc60a;
-    transition:1s;
-}
 
 /* BACKYARD */
 
 .backyard-wrapper {
     /* background-color: aqua; */
-    width: 100%;
+    width: 90%;
     height: 100%;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .backyard {
     /* background-color: blue; */
-    width: 80%;
-    height: 140%;
+    width: 75%;
+    height: 40%;
     border: solid black 2px;
 
     display: flex;
     justify-content:center;
-    align-items: flex-end;
+    align-items: center;
+    flex-direction: column;
+
 }
+
+.backyard:hover {
+    background-color: #ffc60a;
+    transition: 1s;
+}
+
+/* .backyard-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    /* background-color:chocolate; 
+} 
+*/
 
 .tree-wrapper {
     /* background-color: beige; */
-    width: 70%;
-    height: 90%;
-/* 
+    width: 65%;
+    height: 80%;
+
     display: flex;
-    flex-direction: column; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .leaves {
     width: 100%;
     height: 80%;
-    /* background-color: pink; */
+    background-color: white;
     border: solid black 2px;
     border-radius: 100%;
     position: relative;
@@ -338,19 +473,6 @@ body {
     
 }
 
-/* NIGHTMODE */
-
-.nightmode-button {
-    background-color: white;
-    border: black 2px solid;
-    width: 90px;
-    height: 90px;
-    position: relative;
-    left: 85%;
-    top: 25%;
-}
-
-
 /* MIDDLE SIZE */
 
 @media screen and (min-width: 600px) {
@@ -358,22 +480,30 @@ body {
         display:none;
     }
 
+    .backyard-2-wrapper {
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 1200px) {
     .main-container {
-        background-color:white;
+        /* background-color:blue; */
         display: flex;
+    
 
-        height: 120vw;
+        height: 140vw;
 
-        justify-content: center;
+        justify-content: start;
         align-items: center;
+
+        margin-top: 90px;
+
     }
 
     .wrapper {
         width: 70vw;
-        height: 100vw;
+        height: 120vw;
 
         flex-direction: column;
     }
@@ -385,11 +515,39 @@ body {
     .floor {
         /* background-color: yellow; */
         width: 100%;
-        height: 20%;
+        height: 25%;
 
         border-bottom: solid black 2px;
     
         display: flex;
+        
+    }
+
+    /* MIDDLE BACKYARD */
+
+    .backyard-2-wrapper {
+        /* background-color: aquamarine; */
+        width: 33%;
+        height: 32%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .backyard-2 {
+        background-color: white;
+        border: solid black 2px;
+        width: 100%;
+        height: 92%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* flex-direction: column; */
+
+    }
+
+    .backyard-2:hover {
+        background-color: #ffc60a;
+        transition: 1s;
     }
 
     .attic-2 {
@@ -517,25 +675,6 @@ body {
         transition: 1s;
     }
 
-    .garage-2 {
-        background-color: white;
-        border-left: solid black 2px;
-        border-right: solid black 2px;
-
-
-        width: 100%;
-        height: 100%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .garage-2:hover {
-        background-color: #ffc60a;
-        transition: 1s;
-    }
-
 
 
 }
@@ -560,11 +699,17 @@ body {
 
 
     .main-container {
-        background-color: white;
+        /* background-color: pink; */
         height: 500vw;
 
         display: flex;
+        margin-top: 20px;
     }
+
+    .backyard-2-wrapper {
+        display: none;
+    }
+
 
     .floor {
         display: none;
@@ -584,14 +729,40 @@ body {
         /* background-color: blueviolet; */
         height: 95%;
         width: 100%;
+        
+        display: flex;
 
         justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+
+    .backyard-3-wrapper {
+        /* background-color:lightcoral; */
+        width: 45%;
+        height: 12%;
+    }
+
+    .backyard-3 {
+        width: 100%;
+        height: 92%;
+        /* background-color:mediumslateblue; */
+        border: black solid 2px;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         align-items: center;
+    }
+
+    .backyard-3:hover {
+        background-color: #ffc60a;
+        transition: 1s;
     }
 
     .square {
         width: 100%;
-        height: 12.5%;
+        height: 14.2857143%;
         /* background-color: cornflowerblue; */
         border-bottom: solid black 2px;
 
