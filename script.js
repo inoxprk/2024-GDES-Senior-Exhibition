@@ -16,7 +16,7 @@ function fetchProjectDataByPerson(personName, projects) {
     });
 }
 
-// Function to display project on the web page
+// Function to display project on the web page and change the title
 function displayProject(projectData) {
     var projectContainer = document.querySelector(".work-container");
     var projectInfoContainer = document.querySelector(".info-container");
@@ -33,41 +33,53 @@ function displayProject(projectData) {
     // Set project information
     projectName.textContent = projectData.Name;
     projectTitle.textContent = projectData["Project Description"];
-    projectDescription.textContent = projectData.Description;
+    projectDescription.textContent = projectData["Project Description"];
 
     // Append project elements to their containers
     projectInfoContainer.appendChild(projectName);
     projectInfoContainer.appendChild(projectTitle);
     projectInfoContainer.appendChild(projectDescription);
 
-    // Create carousel elements
-    var carousel = document.createElement("div");
-    carousel.classList.add("carousel");
-    projectContainer.appendChild(carousel);
+    // Create carousel elements if there's more than one image link
+    if (projectData.URLs.length > 1) {
+        var carousel = document.createElement("div");
+        carousel.classList.add("carousel");
+        projectContainer.appendChild(carousel);
 
-    // Add images to the carousel
-    projectData.URLs.forEach(function(imageURL) {
-        if (imageURL) {
-            var img = document.createElement("img");
-            img.src = imageURL;
-            carousel.appendChild(img);
-        }
-    });
+        // Add images to the carousel
+        projectData.URLs.forEach(function(imageURL) {
+            if (imageURL) {
+                var img = document.createElement("img");
+                img.src = imageURL;
+                carousel.appendChild(img);
+            }
+        });
 
-    // Add navigation arrows
-    var prevArrow = document.createElement("button");
-    prevArrow.classList.add("prev-arrow");
-    prevArrow.textContent = "<";
-    projectContainer.appendChild(prevArrow);
+        // Add navigation arrows
+        var prevArrow = document.createElement("button");
+        prevArrow.classList.add("prev-arrow");
+        prevArrow.textContent = "<";
+        projectContainer.appendChild(prevArrow);
 
-    var nextArrow = document.createElement("button");
-    nextArrow.classList.add("next-arrow");
-    nextArrow.textContent = ">";
-    projectContainer.appendChild(nextArrow);
+        var nextArrow = document.createElement("button");
+        nextArrow.classList.add("next-arrow");
+        nextArrow.textContent = ">";
+        projectContainer.appendChild(nextArrow);
 
-    // Initialize carousel functionality
-    initCarousel();
+        // Initialize carousel functionality
+        initCarousel();
+    } else {
+        // Add single image if there's only one image link
+        var img = document.createElement("img");
+        img.src = projectData.URLs[0];
+        projectContainer.appendChild(img);
+    }
+
+    // Change the title of the HTML page
+    document.title = projectData.Name.toLowerCase().replace(/-/g, ' ');
 }
+
+
 
 // Function to initialize carousel functionality
 function initCarousel() {
