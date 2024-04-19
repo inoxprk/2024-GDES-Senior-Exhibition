@@ -18,33 +18,32 @@ function fetchProjectDataByPerson(personName, projects) {
 
 // Function to display project on the web page and change the title
 function displayProject(projectData) {
-    var projectContainer = document.querySelector(".work-container");
-    var projectInfoContainer = document.querySelector(".info-container");
+    var carouselContainer = document.querySelector(".carousel-container");
+    var studentInfo = document.querySelector(".student-info");
+
+    // Select project elements
+    var artistName = studentInfo.querySelector(".name");
+    var projectTitle = studentInfo.querySelector(".project-title");
+    var projectDescription = studentInfo.querySelector(".project-description");
 
     // Clear any existing content
-    projectContainer.innerHTML = "";
-    projectInfoContainer.innerHTML = "";
-
-    // Create project elements
-    var projectName = document.createElement("h1");
-    var projectTitle = document.createElement("h2");
-    var projectDescription = document.createElement("p");
+    artistName.innerHTML = "";
+    projectTitle.innerHTML = "";
+    projectDescription.innerHTML = "";
 
     // Set project information
-    projectName.textContent = projectData.Name;
-    projectTitle.textContent = projectData["Project Description"];
+    artistName.textContent = projectData.Name;
+    projectTitle.textContent = projectData.Name;
     projectDescription.textContent = projectData["Project Description"];
 
-    // Append project elements to their containers
-    projectInfoContainer.appendChild(projectName);
-    projectInfoContainer.appendChild(projectTitle);
-    projectInfoContainer.appendChild(projectDescription);
+    // // Append project elements to their containers
+    // studentInfo.appendChild(artistName);
+    // studentInfo.appendChild(projectTitle);
+    // studentInfo.appendChild(projectDescription);
 
     // Create carousel elements if there's more than one image link
     if (projectData.URLs.length > 1) {
-        var carousel = document.createElement("div");
-        carousel.classList.add("carousel");
-        projectContainer.appendChild(carousel);
+        var carousel = document.querySelector('.carousel');
 
         // Add images to the carousel
         projectData.URLs.forEach(function(imageURL) {
@@ -59,20 +58,21 @@ function displayProject(projectData) {
         var prevArrow = document.createElement("button");
         prevArrow.classList.add("prev-arrow");
         prevArrow.textContent = "<";
-        projectContainer.appendChild(prevArrow);
+        carouselContainer.appendChild(prevArrow);
 
         var nextArrow = document.createElement("button");
         nextArrow.classList.add("next-arrow");
         nextArrow.textContent = ">";
-        projectContainer.appendChild(nextArrow);
+        carouselContainer.appendChild(nextArrow);
 
         // Initialize carousel functionality
         initCarousel();
     } else {
+        carouselContainer.innerHTML = ''
         // Add single image if there's only one image link
         var img = document.createElement("img");
         img.src = projectData.URLs[0];
-        projectContainer.appendChild(img);
+        carouselContainer.appendChild(img);
     }
 
     // Change the title of the HTML page
