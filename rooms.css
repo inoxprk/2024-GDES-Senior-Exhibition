@@ -17,12 +17,48 @@ body {
 
 }
 
+/* name stuff */
+.name-container {
+    position: relative;
+    width: 100%;
+    height: 100%; 
+    overflow: scroll; /* Hide overflow to keep names within screen */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.name-tag {
+    position: absolute;
+    display: inline-block;
+    padding: 6px;
+    /* border: 2px solid black; */
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    width: 100px;
+    /* height: 20px; */
+    text-align: center;
+
+font-family: 'CustomerCopy', sans-serif;
+
+}
+
+.name-tag:hover {
+    background-color: #ffc60a;
+    color: black;
+    transition: 1s;
+}
+
 .wrapper {
     width: 100vw;
     height: 100vh;
     
     display: flex;
     flex-direction: column;
+    /* background-color: #ffc60a; */
 }
 
 /* HEADER */
@@ -38,6 +74,7 @@ body {
     align-items: center;
     position: fixed;
     justify-content: space-between;
+    z-index: 1000;
 }
 
 .logo {
@@ -149,131 +186,15 @@ body {
 
 .main {
     width: 100%;
-    height: 150%;
-    background-color: #ffc60a;
+    height: 100%;
+    /* background-color: #ffc60a; */
 
     display: flex;
     /* align-items: center; */
     justify-content: center;
+    margin-top: 70px;
 }
 
-.content-wrapper {
-    width: 100vw;
-    height: 100%;
-    /* background-color: pink; */
-
-    display: flex;
-    margin:20px;
-    margin-top: 90px;
-
-
-    gap: 20px;
-
-}
-
-.rectangle {
-    background-color: white;
-    width: 100%;
-    height: 100%;
-
-    border: solid black 2px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-
-}
-
-
-/* student work organization */
-
-/* Carousel container */
-.work-container {
-    background-color: rgb(216, 216, 216);
-    border: solid black 1.5px;
-    width: 70%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Hide overflowing content */
-    position: relative; /* Position relative for absolute positioning of arrows */
-}
-
-/* Individual carousel image */
-.work-container img {
-    max-width: 100%; /* Ensure image fits within container */
-    max-height: 100%; /* Ensure image fits within container */
-    object-fit: contain; /* Maintain aspect ratio and fit within container */
-    display: block; /* Remove default inline display */
-}
-
-.carousel {
-    width: 100%;
-}
-
-/* Previous and Next buttons for carousel (if needed) */
-/* You can style these buttons further as needed */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
-    z-index: 1;
-}
-
-.carousel-btn-prev {
-    left: 10px;
-}
-
-.carousel-btn-next {
-    right: 10px;
-}
-
-
-/* student name */
-.info-container {
-    width: 30%;
-    overflow: scroll;
-}
-.info-container h1 {
-    margin-top: 5%;
-    margin-bottom: 10px;
-    font-family: 'CustomerCopy', sans-serif;
-    font-size: 20pt;
-    line-height: 20pt;
-
-    font-weight: normal;
-
-}
-
-/* project title */
-
-.info-container h2{
-    margin-top: 0; /* Remove space above h1 */
-    margin-bottom: 0;
-
-    font-family: "neue-haas-unica";
-    font-size: 20pt;
-    line-height: 22pt;
-    font-weight: 200;
-
-}
-
-/* PROJECT DESCRIPTION */
-
-.info-container p {
-    font-family: "neue-haas-unica";
-    font-size: 10pt;
-    line-height: 13pt;
-    font-weight: 200;
-}
 
 
 
@@ -361,47 +282,143 @@ body {
 
 }
 
-/* BEDROOM PAGE */
 
-.bedroom {
-    background-color:#59caec ;
+/* ROOMS */
+
+.mobile {
+    display: none;
 }
 
-/* CLOSET PAGE */
-
-.closet {
-    background-color: #ffc60a ;
+.desktop {
+    position: fixed;
 }
 
-/* KITCHEN PAGE */
-
-.kitchen {
-    background-color: #ffc60a;
+.entry {
+    margin-top: 50px;
 }
-
-/* OFFICE PAGE */
 
 .office {
-    background-color: #ed2087;
+    margin-top: 50px;
 }
 
-/* LIVING ROOM PAGE */
+.kitchen {
+    /* margin-top: 70px; */
+}
 
 .living {
-    background-color: #ed2087;
+    margin-top: 50px;
 }
-
-
-/* DINING ROOM PAGE */
 
 .dining {
-    background-color: #59caec;
+    margin-top: 70px;
 }
 
-/* PRJOECT PAGE Example */
+.bedroom {
+    margin-top: 70px;
+}
 
+
+/* student project page */
 .project {
-    background-color:#ffc60a;
+    /* background-color:darkgray; */
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    /* background-color: bisque; */
+    gap: 20px;
+}
+
+.project-wrapper {
+    display: flex;
+    width: 86vw;
+    height: 44vw;
+    border: solid 2px black;
+    margin-top: 20px;
+}
+
+.carousel-container {
+    /* background-color: deeppink; */
+    width: 50%;
+    height: 100%;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.carousel {
+    width: 40vw;
+    height: 40vw;
+    /* background-color: aquamarine; */
+
+    border: solid black 2px;
+
+    overflow: hidden;
+}
+
+.image-test {
+    height: 1000px;
+}
+
+
+.student-info-container {
+    /* background-color: cornflowerblue; */
+    width: 50%;
+    height: 100%;
+    /* padding-top: 30px; */
+    display: flex;
+    align-items: center;
+}
+
+.student-info {
+    /* background-color: #fff; */
+    width: 40vw;
+    height: 40vw;
+    overflow: scroll;
+
+}
+
+.name {
+
+    font-family: "neue-haas-unica";
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.plugs {
+    font-family: "neue-haas-unica";
+    font-size: 10pt;
+    margin-top: 8px;
+}
+
+.project-title {
+    font-family: 'CustomerCopy', sans-serif;
+    font-size: 48pt;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.project-description {
+    margin-top: 0;
+    font-family: "neue-haas-unica";
+    font-size: 10pt;
+}
+
+.office-directory {
+    background-color: aqua;
+    display: flex;
+    width: 20vw;
+    height: 44vw;
+    border: solid 2px black;
+    margin-top: 20px;
 }
 
 
@@ -409,23 +426,27 @@ body {
 
 
 /* MOBILE */
-@media screen and (max-width:600px) {
+@media screen and (max-width:700px) {
+    .mobile {
+        display: block;
+        object-fit: contain;
+    }
+
+    .desktop {
+        display: none;
+    }
+
    .main {
         height: 300vw;
         /* background-color: blueviolet; */
    }
-   
-    .content-wrapper {
-        /* background-color: pink; */
-        flex-direction: column;
-        height: 240vw;
-    }
 
     .rectangle {
         width: 100%;
         height: 160vw;
 
         flex-direction: column;
+        overflow: auto;
     }
 
     .work-container {
@@ -441,10 +462,10 @@ body {
         margin-top: 0;
     }
 
-    .text-wrapper {
+    /* .text-wrapper {
         width: 100%;
         height: 150vw;
-    }
+    } */
 
     .room-name {
         font-size: 30pt;
