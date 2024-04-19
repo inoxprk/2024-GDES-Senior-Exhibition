@@ -173,7 +173,7 @@ body {
 
 .rectangle {
     background-color: white;
-    width: 70%;
+    width: 100%;
     height: 46vw;
 
     border: solid black 2px;
@@ -189,15 +189,45 @@ body {
 
 /* student work organization */
 
+/* Carousel container */
 .work-container {
-    background-color:rgb(216, 216, 216);
+    background-color: rgb(216, 216, 216);
     border: solid black 1.5px;
     width: 70%;
     height: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+/* Individual carousel image */
+.work-container img {
+    max-width: 100%; /* Ensure image fits within container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove default inline display */
+}
+
+/* Previous and Next buttons for carousel (if needed) */
+/* You can style these buttons further as needed */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    z-index: 1;
+}
+
+.carousel-btn-prev {
+    left: 10px;
+}
+
+.carousel-btn-next {
+    right: 10px;
 }
 
 .info-container {

@@ -40,13 +40,61 @@ function displayProject(projectData) {
     projectInfoContainer.appendChild(projectTitle);
     projectInfoContainer.appendChild(projectDescription);
 
-    // Add images
+    // Create carousel elements
+    var carousel = document.createElement("div");
+    carousel.classList.add("carousel");
+    projectContainer.appendChild(carousel);
+
+    // Add images to the carousel
     projectData.URLs.forEach(function(imageURL) {
         if (imageURL) {
             var img = document.createElement("img");
             img.src = imageURL;
-            projectContainer.appendChild(img);
+            carousel.appendChild(img);
         }
+    });
+
+    // Add navigation arrows
+    var prevArrow = document.createElement("button");
+    prevArrow.classList.add("prev-arrow");
+    prevArrow.textContent = "<";
+    projectContainer.appendChild(prevArrow);
+
+    var nextArrow = document.createElement("button");
+    nextArrow.classList.add("next-arrow");
+    nextArrow.textContent = ">";
+    projectContainer.appendChild(nextArrow);
+
+    // Initialize carousel functionality
+    initCarousel();
+}
+
+// Function to initialize carousel functionality
+function initCarousel() {
+    const carousel = document.querySelector('.carousel');
+    const prevArrow = document.querySelector('.prev-arrow');
+    const nextArrow = document.querySelector('.next-arrow');
+    let currentImageIndex = 0;
+
+    // Hide all images except the first one
+    const images = carousel.querySelectorAll('img');
+    images.forEach((img, index) => {
+        if (index !== currentImageIndex) {
+            img.style.display = 'none';
+        }
+    });
+
+    // Event listeners for navigation arrows
+    prevArrow.addEventListener('click', function() {
+        images[currentImageIndex].style.display = 'none';
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        images[currentImageIndex].style.display = 'block';
+    });
+
+    nextArrow.addEventListener('click', function() {
+        images[currentImageIndex].style.display = 'none';
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        images[currentImageIndex].style.display = 'block';
     });
 }
 
@@ -77,4 +125,3 @@ xhr.onreadystatechange = function() {
 };
 xhr.open("GET", "../../data.json", true); // Adjusted URL to fetch data.json from the root
 xhr.send();
-
