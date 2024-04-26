@@ -1,123 +1,109 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>office</title>
-    <link rel="stylesheet" href="rooms.css">
-    <link rel="stylesheet" href="https://use.typekit.net/oom6xvm.css">
-    <meta name="'viewport" content="width=device-width,initial-scale=1.0">
-</head>
+    <link rel="stylesheet" href="rooms.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/oom6xvm.css" />
+    <meta name="'viewport" content="width=device-width,initial-scale=1.0" />
+  </head>
 
-<body>
-
-<div class="wrapper">
-    
-    <div class="header">
+  <body>
+    <div class="wrapper">
+      <div class="header">
         <a href="index.html" class="logo-link">
-            <img src="black-secondary-2.3png.png" class="logo">
+          <img src="black-secondary-2.3png.png" class="logo" />
         </a>
         <div class="buttons">
-            <a href="about.html" id="aboutBtn">ABOUT</a>
-            <button id="openBtn">DIRECTORY</button>
+          <a href="about.html" id="aboutBtn">ABOUT</a>
+          <button id="openBtn">DIRECTORY</button>
         </div>
-    </div>
+      </div>
 
-    <div id="directory" class="slide-out">
+      <div id="directory" class="slide-out">
         <div class="directory-content">
-            <button id="closeBtn">X</button>
+          <button id="closeBtn">X</button>
         </div>
+      </div>
+
+      <div class="main office name-container">
+        <img src="Desktop_Office.svg" class="desktop" />
+        <img src="Office_Phone.svg" class="mobile" />
+      </div>
     </div>
-    
-    <div class="main office name-container">
-        <img src="Desktop_Office.svg" class="desktop">
-        <img src="Office_Phone.svg" class="mobile">
-    </div>
+    <script src="script.js"></script>
 
-</div>
-<script src="script.js"></script>
+    <script>
+      // Function to generate random skew values
+      function getRandomSkew() {
+        var skewX = Math.random() * 20 - 10; // Skew range between -10deg to 10deg
+        var skewY = Math.random() * 20 - 10;
+        return "skew(" + skewX + "deg, " + skewY + "deg)";
+      }
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
-<script>
-    // Seed the random number generator with a fixed seed
-    Math.seedrandom('your_seed_here');
-
-    // Function to generate random coordinates within the name-container
-    function getRandomCoordinates(container) {
+      // Function to generate random coordinates within the name-container
+      function getRandomCoordinates(container) {
         var containerRect = container.getBoundingClientRect();
-        var x = Math.random() * (containerRect.width - 100); // Adjust 100 as needed for name-tag width
-        var y = Math.random() * (containerRect.height - 30); // Adjust 30 as needed for name-tag height
+        var padding = 10; // Assume a padding of 10px on all sides if any
+        var width = 100; // Width of the name-tag
+        var height = 30; // Height of the name-tag
+        var x =
+          Math.random() * (containerRect.width - width - padding * 2) + padding;
+        var y =
+          Math.random() * (containerRect.height - height - padding * 2) +
+          padding;
         return { x: x, y: y };
-    }
+      }
 
-    // Function to check if two rectangles overlap
-    function doRectanglesOverlap(rect1, rect2) {
-        return (
-            rect1.x < rect2.x + rect2.width &&
-            rect1.x + rect1.width > rect2.x &&
-            rect1.y < rect2.y + rect2.height &&
-            rect1.y + rect1.height > rect2.y
-        );
-    }
-
-    // Function to reposition the name tags within the container
-    function repositionNames(container) {
-        var nameTags = container.querySelectorAll('.name-tag');
-        var nameRects = [];
-
-        nameTags.forEach(function(nameTag) {
-            var coordinates, nameRect;
-            do {
-                coordinates = getRandomCoordinates(container);
-                nameRect = { x: coordinates.x, y: coordinates.y, width: 100, height: 30 }; // Adjust width and height as needed
-            } while (nameRects.some(rect => doRectanglesOverlap(rect, nameRect))); // Check for overlap
-
-            nameRects.push(nameRect); // Add the new name box rectangle to the array
-
-            nameTag.style.transition = "left 0.5s, top 0.5s"; // Smooth transition
-            nameTag.style.left = coordinates.x + "px";
-            nameTag.style.top = coordinates.y + "px";
+      // Function to remove and reposition name tags
+      function refreshNameTags(container) {
+        // Remove existing name tags
+        const existingTags = container.querySelectorAll(".name-tag");
+        existingTags.forEach(function (tag) {
+          tag.parentNode.removeChild(tag);
         });
-    }
 
-    // Array of names and corresponding links
-    var namesAndLinks = [
-        { name: "Alice Franklin", link: "alice.html" },
-        { name: "Bob Smith", link: "bob.html" },
-        { name: "Charlie Johnson", link: "charlie.html" },
-        { name: "David Miller", link: "david.html" },
-        { name: "Eve Thomas", link: "eve.html" },
-        { name: "Frank Moore", link: "frank.html" },
-        { name: "Grace Taylor", link: "grace.html" },
-        { name: "Henry Jones", link: "henry.html" },
-        { name: "Ivy Wilson", link: "ivy.html" },
-        { name: "Jack Hernandez", link: "jack.html" }
-    ];
+        // Recreate and reposition name tags
+        createAndPositionNames(container);
+      }
 
-    // Create and position the names with boxes
-    var nameContainer = document.querySelector('.name-container');
-    namesAndLinks.forEach(function(item) {
-        var coordinates, nameRect;
-        coordinates = getRandomCoordinates(nameContainer);
-        nameRect = { x: coordinates.x, y: coordinates.y, width: 100, height: 30 }; // Adjust width and height as needed
+      // Function to create and position the name tags within the container
+      function createAndPositionNames(container) {
+        var namesAndLinks = [
+          { name: "Alice Franklin", link: "alice.html" },
+          { name: "Bob Smith", link: "bob.html" },
+          { name: "Charlie Johnson", link: "charlie.html" },
+          { name: "David Miller", link: "david.html" },
+          { name: "Eve Thomas", link: "eve.html" },
+          { name: "Frank Moore", link: "frank.html" },
+          { name: "Grace Taylor", link: "grace.html" },
+          { name: "Henry Jones", link: "henry.html" },
+          { name: "Ivy Wilson", link: "ivy.html" },
+          { name: "Jack Hernandez", link: "jack.html" },
+        ];
 
-        var nameLink = document.createElement("a");
-        nameLink.href = item.link;
-        var nameTag = document.createElement("div");
-        nameTag.textContent = item.name;
-        nameTag.classList.add("name-tag");
-        nameTag.style.left = coordinates.x + "px";
-        nameTag.style.top = coordinates.y + "px";
-        nameLink.appendChild(nameTag);
-        nameContainer.appendChild(nameLink)
-    });
+        namesAndLinks.forEach(function (item) {
+          var coordinates = getRandomCoordinates(container);
+          var nameLink = document.createElement("a");
+          nameLink.href = item.link;
+          var nameTag = document.createElement("div");
+          nameTag.textContent = item.name;
+          nameTag.classList.add("name-tag");
+          nameTag.style.left = coordinates.x + "px";
+          nameTag.style.top = coordinates.y + "px";
+          nameTag.style.transform = getRandomSkew(); // Apply random skew
+          nameLink.appendChild(nameTag);
+          container.appendChild(nameLink);
+        });
+      }
 
-    // Initial positioning of names
-    repositionNames(nameContainer);
+      // Initial creation and positioning of names
+      var nameContainer = document.querySelector(".name-container");
+      createAndPositionNames(nameContainer);
 
-    // Event listener for window resize
-    window.addEventListener('resize', function() {
-        repositionNames(nameContainer);
-    });
-</script>
-
-</body>
+      // Event listener for window resize
+      window.addEventListener("resize", function () {
+        refreshNameTags(nameContainer);
+      });
+    </script>
+  </body>
 </html>

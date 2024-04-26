@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>backyard</title>
-        <link  rel="stylesheet" href="rooms.css">
-        <link rel="stylesheet" href="https://use.typekit.net/oom6xvm.css">
-        <meta name="'viewport" content="width=device-width,initial-scale=1.0">
-    </head>
+  <head>
+    <title>backyard</title>
+    <link rel="stylesheet" href="rooms.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/oom6xvm.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .wrapper {
+        background-color: #ffc60a; /* Daytime color */
+        color: #000000; /* Dark text color for daytime */
+        transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for color and background */
+        width: 100vw; /* Ensure full viewport width */
+        height: 100vh; /* Ensure full viewport height */
+        display: flex; /* Added display properties to maintain layout integrity */
+        flex-direction: column;
+      }
 
-    <!-- backyard ROOM PAGE -->
-
-    <body>
-
-        <div class="wrapper">
-            
-            <div class="header">
-                <a href="index.html" class="logo-link">
-                    <img src="black-secondary-2.3png.png" class="logo">
-                </a>
-                <div class="buttons">
-                    <a href="about.html" id="aboutBtn">ABOUT</a>
-                    <button id="openBtn">DIRECTORY</button>
-                </div>
-
-            </div>
-
-            <div id="directory" class="slide-out">
-               <div class="directory-content">
-                    <button id="closeBtn">X</button>
-               </div>
-            </div>
-            
-            <div class="main">
-                <img src="Backyard_Desktop.svg" class="desktop">
-                <img src="Backyard_Phone.svg" class="mobile">
-            </div>
-
-
+      body .wrapper.night-mode {
+        background-color: darkslateblue !important; /* Nighttime color */
+        color: white !important; /* Light text color for nighttime */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper" id="pageWrapper">
+      <div class="header">
+        <a href="index.html" class="logo-link">
+          <img src="black-secondary-2.3png.png" class="logo" />
+        </a>
+        <div class="buttons">
+          <a href="about.html" id="aboutBtn">ABOUT</a>
+          <button id="openBtn">DIRECTORY</button>
         </div>
-        <script src="script.js"></script>
-    </body>
+      </div>
 
+      <div id="directory" class="slide-out">
+        <div class="directory-content">
+          <button id="closeBtn">X</button>
+        </div>
+      </div>
 
-
-
-
-
-
+      <div class="main">
+        <img src="Backyard_Desktop.svg" class="desktop" />
+        <img src="Backyard_Phone.svg" class="mobile" />
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("pageWrapper")
+          .addEventListener("click", function () {
+            console.log("Click detected. Current class: " + this.className);
+            this.classList.toggle("night-mode");
+            console.log("Toggled class. New class: " + this.className);
+          });
+      });
+    </script>
+  </body>
 </html>
