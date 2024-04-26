@@ -4,8 +4,8 @@
 
 @font-face {
     font-family: 'CustomerCopy';
-    src: url('path/to/Customer Copy.woff2') format('woff2'), /* Modern Browsers */
-         url('path/to/Customer Copy.otf') format('opentype'); /* Safari, Android, iOS */
+    src: url('Customer Copy.woff2') format('woff2'), /* Modern Browsers */
+         url('Customer Copy.otf') format('opentype'); /* Safari, Android, iOS */
     font-style: normal;
     font-weight: normal;
     text-rendering: optimizeLegibility;
