@@ -6,6 +6,23 @@ document.getElementById('closeBtn').addEventListener('click', function() {
     document.getElementById('directory').classList.remove('slide-in');
 });
 
+// CUBE CSS FUNCTIONS
+
+function adjustCubeSize() {
+    const cube = document.querySelector('.cube');
+    const minViewportDim = Math.min(window.innerWidth, window.innerHeight);
+    const cubeSize = minViewportDim * 0.9; // Adjust size as needed
+    cube.style.width = cubeSize + 'px';
+    cube.style.height = cubeSize + 'px';
+
+    const fontSize = minViewportDim / 50; // Adjust divisor as needed for font size scaling
+    const faces = document.querySelectorAll('.face');
+    faces.forEach(face => face.style.fontSize = fontSize + 'px');
+}
+
+// Adjust cube size and font size on initial load and window resize
+window.addEventListener('load', adjustCubeSize);
+window.addEventListener('resize', adjustCubeSize);
 
 // ajax stuff below
 
@@ -19,12 +36,21 @@ function fetchProjectDataByPerson(personName, projects) {
 // Function to display project on the web page and change the title
 function displayProject(projectData) {
     var carouselContainer = document.querySelector(".carousel-container");
-    var studentInfo = document.querySelector(".student-info");
+    var studentInfo = document.querySelector(".overflow-hidden");
 
     // Select project elements
     var artistName = studentInfo.querySelector(".name");
     var projectTitle = studentInfo.querySelector(".project-title");
     var projectDescription = studentInfo.querySelector(".project-description");
+
+    // website and instagram links
+    var artistInstagram = document.createElement("a");
+    artistInstagram.href = projectData.Instagram;
+    artistInstagram.innerHTML = "instagram";
+
+    var artistWebsite = document.createElement("a");
+    artistWebsite.href = projectData.Website;
+    artistWebsite.innerHTML = "website"; 
 
     // Clear any existing content
     artistName.innerHTML = "";
@@ -32,8 +58,16 @@ function displayProject(projectData) {
     projectDescription.innerHTML = "";
 
     // Set project information
-    artistName.textContent = projectData.Name;
-    projectTitle.textContent = projectData.Name;
+    artistName.textContent = projectData.Name + " | ";
+    artistName.appendChild(artistWebsite);
+    artistName.innerHTML += " | ";
+    artistName.appendChild(artistInstagram);
+
+
+    // NEED TO ADD PROJECT TITLE SECTION IN JSON
+
+    // projectTitle.textContent = projectData.Name; 
+
     projectDescription.textContent = projectData["Project Description"];
 
     // // Append project elements to their containers
@@ -54,16 +88,18 @@ function displayProject(projectData) {
             }
         });
 
+        // CHANGE CURSOR FOR LEFT OR RIGHT BELOW
+        
         // Add navigation arrows
-        var prevArrow = document.createElement("button");
-        prevArrow.classList.add("prev-arrow");
-        prevArrow.textContent = "<";
-        carouselContainer.appendChild(prevArrow);
+        // var prevArrow = document.createElement("button");
+        // prevArrow.classList.add("prev-arrow");
+        // prevArrow.textContent = "<";
+        // carouselContainer.appendChild(prevArrow);
 
-        var nextArrow = document.createElement("button");
-        nextArrow.classList.add("next-arrow");
-        nextArrow.textContent = ">";
-        carouselContainer.appendChild(nextArrow);
+        // var nextArrow = document.createElement("button");
+        // nextArrow.classList.add("next-arrow");
+        // nextArrow.textContent = ">";
+        // carouselContainer.appendChild(nextArrow);
 
         // Initialize carousel functionality
         initCarousel();

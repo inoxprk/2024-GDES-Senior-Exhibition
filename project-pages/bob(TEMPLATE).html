@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>project page example</title>
-        <link  rel="stylesheet" href="rooms.css">
+        <link  rel="stylesheet" href="/rooms.css">
         <link rel="stylesheet" href="https://use.typekit.net/oom6xvm.css">
         <meta name="'viewport" content="width=device-width,initial-scale=1.0">
     </head>
@@ -14,11 +14,11 @@
         <div class="wrapper">
             
             <div class="header">
-                <a href="index.html" class="logo-link">
-                    <img src="black-secondary-2.3png.png" class="logo">
+                <a href="/index.html" class="logo-link">
+                    <img src="/black-secondary-2.3png.png" class="logo">
                 </a>
                 <div class="buttons">
-                    <a href="about.html" id="aboutBtn">ABOUT</a>
+                    <a href="/about.html" id="aboutBtn">ABOUT</a>
                     <button id="openBtn">DIRECTORY</button>
                 </div>
 
@@ -34,7 +34,7 @@
                 <div class="project-wrapper">
                     <div class="carousel-container">
                         <div class="carousel">
-                            <img src="test.jpeg" class="image-test">
+                            <img src="/test.jpeg" class="image-test">
                         </div>
                     </div>
                     <div class="student-info-container">
@@ -53,7 +53,7 @@
             fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
             scelerisque vitae, consequat in, pretium a, enim.</p>
 
-            <p class="name">FULL NAME | Instagram Portfolio</p>
+            <p class="name">FULL NAME | Website | Instagram Portfolio</p>
 
 
                                     </p>
@@ -68,31 +68,6 @@
 
 
         </div>
-        <script src="script.js"></script>
-        <script>
-            function adjustCubeSize() {
-    const cube = document.querySelector('.cube');
-    const minViewportDim = Math.min(window.innerWidth, window.innerHeight);
-    const cubeSize = minViewportDim * 0.9; // Adjust size as needed
-    cube.style.width = cubeSize + 'px';
-    cube.style.height = cubeSize + 'px';
-
-    const fontSize = minViewportDim / 50; // Adjust divisor as needed for font size scaling
-    const faces = document.querySelectorAll('.face');
-    faces.forEach(face => face.style.fontSize = fontSize + 'px');
-}
-
-// Adjust cube size and font size on initial load and window resize
-window.addEventListener('load', adjustCubeSize);
-window.addEventListener('resize', adjustCubeSize);
-
-        </script>
+        <script src="/script.js"></script>
     </body>
-
-
-
-
-
-
-
 </html>
