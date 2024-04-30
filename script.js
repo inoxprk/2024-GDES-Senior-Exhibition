@@ -1,155 +1,144 @@
-document.getElementById('openBtn').addEventListener('click', function() {
-    document.getElementById('directory').classList.add('slide-in');
-});
+document.addEventListener("DOMContentLoaded", function () {
+    // Function to fetch project data based on the person's name
+    function fetchProjectDataByPerson(personName, projects) {
+        return projects.find(function(project) {
+            return project.Name.toLowerCase() === personName.toLowerCase();
+        });
+    }
 
-document.getElementById('closeBtn').addEventListener('click', function() {
-    document.getElementById('directory').classList.remove('slide-in');
-});
+    // Function to display project on the web page and change the title
+    function displayProject(projectData) {
+        var carouselContainer = document.querySelector(".carousel-container");
+        var studentInfo = document.querySelector(".overflow-hidden");
 
-// Function to fetch project data based on the person's name
-function fetchProjectDataByPerson(personName, projects) {
-    return projects.find(function(project) {
-        return project.Name.toLowerCase() === personName.toLowerCase();
-    });
-}
+        // Select project elements
+        var artistName = studentInfo.querySelector(".name");
+        var projectTitle = studentInfo.querySelector(".project-title");
+        var projectDescription = studentInfo.querySelector(".project-description");
 
-// Function to display project on the web page and change the title
-function displayProject(projectData) {
-    var carouselContainer = document.querySelector(".carousel-container");
-    var studentInfo = document.querySelector(".overflow-hidden");
+        // website and instagram links
+        var artistInstagram = document.createElement("a");
+        artistInstagram.href = projectData.Instagram;
+        artistInstagram.innerHTML = "instagram";
 
-    // Select project elements
-    var artistName = studentInfo.querySelector(".name");
-    var projectTitle = studentInfo.querySelector(".project-title");
-    var projectDescription = studentInfo.querySelector(".project-description");
+        var artistWebsite = document.createElement("a");
+        artistWebsite.href = projectData.Website;
+        artistWebsite.innerHTML = "website"; 
 
-    // website and instagram links
-    var artistInstagram = document.createElement("a");
-    artistInstagram.href = projectData.Instagram;
-    artistInstagram.innerHTML = "instagram";
+        // Clear any existing content
+        artistName.innerHTML = "";
+        projectTitle.innerHTML = "";
+        projectDescription.innerHTML = "";
 
-    var artistWebsite = document.createElement("a");
-    artistWebsite.href = projectData.Website;
-    artistWebsite.innerHTML = "website"; 
+        // Set project information
+        artistName.textContent = projectData.Name + " | ";
+        artistName.appendChild(artistWebsite);
+        artistName.innerHTML += " | ";
+        artistName.appendChild(artistInstagram);
 
-    // Clear any existing content
-    artistName.innerHTML = "";
-    projectTitle.innerHTML = "";
-    projectDescription.innerHTML = "";
+        projectDescription.innerHTML = projectData["Project Description"];
 
-    // Set project information
-    artistName.textContent = projectData.Name + " | ";
-    artistName.appendChild(artistWebsite);
-    artistName.innerHTML += " | ";
-    artistName.appendChild(artistInstagram);
-
-
-    // NEED TO ADD PROJECT TITLE SECTION IN JSON
-
-    // projectTitle.textContent = projectData.Name; 
-
-    projectDescription.textContent = projectData["Project Description"];
-
-    // // Append project elements to their containers
-    // studentInfo.appendChild(artistName);
-    // studentInfo.appendChild(projectTitle);
-    // studentInfo.appendChild(projectDescription);
-
-    // Create carousel elements if there's more than one image link
-    if (projectData.URLs.length > 1) {
-        var carousel = document.querySelector('.carousel');
-
-        // Add images to the carousel
-        projectData.URLs.forEach(function(imageURL) {
-            if (imageURL) {
-                var img = document.createElement("img");
-                img.src = imageURL;
-                carousel.appendChild(img);
-            }
+        // Display the current image in the carousel
+        let currentImageIndex = 0;
+        const images = projectData.URLs.map(url => {
+            const img = new Image();
+            img.src = url;
+            img.classList.add('image-carousel'); // Add the class 'image-carousel'
+            return img;
         });
 
-        // CHANGE CURSOR FOR LEFT OR RIGHT BELOW
+        function showCurrentImage() {
+            const carousel = document.querySelector('.carousel');
+            carousel.innerHTML = ''; // Clear previous images
+            images.forEach((img, index) => {
+                if (index < projectData.URLs.length && projectData.URLs[index]) {
+                    img.style.display = index === currentImageIndex ? "block" : "none";
+                    carousel.appendChild(img); // Append each valid image to the carousel
+                }
+            });
+        }
         
-        // Add navigation arrows
-        // var prevArrow = document.createElement("button");
-        // prevArrow.classList.add("prev-arrow");
-        // prevArrow.textContent = "<";
-        // carouselContainer.appendChild(prevArrow);
 
-        // var nextArrow = document.createElement("button");
-        // nextArrow.classList.add("next-arrow");
-        // nextArrow.textContent = ">";
-        // carouselContainer.appendChild(nextArrow);
+        // Navigate to the next image
+        function nextImage() {
+            let nextIndex = currentImageIndex + 1;
+            // Find the next valid image index
+            while (nextIndex < images.length && (!projectData.URLs[nextIndex] || projectData.URLs[nextIndex] === "")) {
+                nextIndex++;
+            }
+            currentImageIndex = nextIndex % images.length;
+            showCurrentImage();
+        }
+        
 
-        // Initialize carousel functionality
-        initCarousel();
-    } else {
-        carouselContainer.innerHTML = ''
-        // Add single image if there's only one image link
-        var img = document.createElement("img");
-        img.src = projectData.URLs[0];
-        carouselContainer.appendChild(img);
+        // Initialize carousel display
+        showCurrentImage();
+
+        // Control image navigation
+        var nextButton = document.getElementById("nextButton");
+        nextButton.addEventListener("click", nextImage);
+
+        // Define colors for hover effects
+        var postItColors = [
+            "#ffadad",
+            "#ffd6a5",
+            "#fdffb6",
+            "#caffbf",
+            "#9bf6ff",
+            "#a0c4ff",
+            "#bdb2ff",
+            "#ffc6ff",
+        ];
+
+        // Set hover and mouseout events for openBtn and nextButton
+        setHoverEffect("openBtn", postItColors);
+        setHoverEffect("nextButton", postItColors);
+
+        // Function to apply hover effects
+        function setHoverEffect(buttonId, colors) {
+            var button = document.getElementById(buttonId);
+            button.addEventListener("mouseover", function () {
+                this.style.backgroundColor = getRandomColor(colors);
+            });
+            button.addEventListener("mouseout", function () {
+                this.style.backgroundColor = "white";
+            });
+        }
+
+        // Get a random color from an array
+        function getRandomColor(colors) {
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Change document title
+        document.title = projectData.Name.split(' ')[0].toUpperCase().split('').join(' ');
     }
 
-    // Change the title of the HTML page
-    document.title = projectData.Name.toLowerCase().replace(/-/g, ' ');
-}
+    // AJAX request to fetch the JSON data
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var projects = JSON.parse(this.responseText);
 
+            // Get the person's name from the URL
+            var pathname = window.location.pathname;
+            console.log("Pathname:", pathname); // Check the pathname for debugging
 
+            var personName = pathname.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+            console.log("Person name:", personName); // Check the person's name for debugging
 
-// Function to initialize carousel functionality
-function initCarousel() {
-    const carousel = document.querySelector('.carousel');
-    const prevArrow = document.querySelector('.prev-arrow');
-    const nextArrow = document.querySelector('.next-arrow');
-    let currentImageIndex = 0;
+            // Fetch project data based on the person's name
+            var projectData = fetchProjectDataByPerson(personName, projects);
+            console.log("Project data:", projectData); // Check the project data for debugging
 
-    // Hide all images except the first one
-    const images = carousel.querySelectorAll('img');
-    images.forEach((img, index) => {
-        if (index !== currentImageIndex) {
-            img.style.display = 'none';
+            // Display project on the web page
+            if (projectData) {
+                displayProject(projectData);
+            } else {
+                console.error("Project not found");
+            }
         }
-    });
-
-    // Event listeners for navigation arrows
-    prevArrow.addEventListener('click', function() {
-        images[currentImageIndex].style.display = 'none';
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        images[currentImageIndex].style.display = 'block';
-    });
-
-    nextArrow.addEventListener('click', function() {
-        images[currentImageIndex].style.display = 'none';
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        images[currentImageIndex].style.display = 'block';
-    });
-}
-
-// AJAX request to fetch the JSON data
-var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        var projects = JSON.parse(this.responseText);
-
-        // Get the person's name from the URL
-        var pathname = window.location.pathname;
-        console.log("Pathname:", pathname); // Check the pathname for debugging
-
-        var personName = pathname.split('/').pop().replace('.html', '').replace(/-/g, ' ');
-        console.log("Person name:", personName); // Check the person's name for debugging
-
-        // Fetch project data based on the person's name
-        var projectData = fetchProjectDataByPerson(personName, projects);
-        console.log("Project data:", projectData); // Check the project data for debugging
-
-        // Display project on the web page
-        if (projectData) {
-            displayProject(projectData);
-        } else {
-            console.error("Project not found");
-        }
-    }
-};
-xhr.open("GET", "../../data.json", true); // Adjusted URL to fetch data.json from the root
-xhr.send();
+    };
+    xhr.open("GET", "../../data.json", true); // Adjusted URL to fetch data.json from the root
+    xhr.send();
+});

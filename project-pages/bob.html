@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>B O B - S M I T H</title>
-    <link rel="stylesheet" href="rooms.css" />
+    <link rel="stylesheet" href="/rooms.css" />
     <link rel="stylesheet" href="https://use.typekit.net/oom6xvm.css" />
     <meta name="'viewport" content="width=device-width,initial-scale=1.0" />
   </head>
@@ -12,11 +12,11 @@
   <body>
     <div class="wrapper">
       <div class="header">
-        <a href="index.html" class="logo-link">
-          <img src="black-secondary-2.3png.png" class="logo" />
+        <a href="/index.html" class="logo-link">
+          <img src="/images/black-secondary-2.3png.png" class="logo" />
         </a>
         <div class="buttons">
-          <a href="office.html" id="openBtn" class="button-link"
+          <a href="/office.html" id="openBtn" class="button-link"
             ><span>OFFICE</span></a
           >
         </div>
@@ -26,9 +26,9 @@
         <div class="project-wrapper">
           <div class="carousel-container">
             <div class="carousel">
-              <img src="test-image01.jpeg" class="image-test" />
-              <img src="test-image02.jpeg" class="image-test" />
-              <img src="test-image03.jpeg" class="image-test" />
+              <img src="/test-image01.jpeg" class="image-carousel" />
+              <img src="/test-image02.jpeg" class="image-carousel" />
+              <img src="/test-image03.jpeg" class="image-carousel" />
             </div>
             <button id="nextButton"></button>
           </div>
@@ -70,75 +70,6 @@
         </div>
       </div>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Target the span inside openBtn to apply transformations
-        var openBtnText = document.querySelector("#openBtn span");
-        var transformStyle = getRandomTransform();
-        openBtnText.style.transform = transformStyle;
-        console.log("Applied transform:", transformStyle); // Log to check the values
-
-        // Initialize carousel display
-        showCurrentImage();
-
-        // Define colors for hover effects
-        var postItColors = [
-          "#ffadad",
-          "#ffd6a5",
-          "#fdffb6",
-          "#caffbf",
-          "#9bf6ff",
-          "#a0c4ff",
-          "#bdb2ff",
-          "#ffc6ff",
-        ];
-
-        // Set hover and mouseout events for openBtn and nextButton
-        setHoverEffect("openBtn", postItColors);
-        setHoverEffect("nextButton", postItColors);
-
-        // Control image navigation
-        var nextButton = document.getElementById("nextButton");
-        nextButton.addEventListener("click", nextImage);
-      });
-
-      // Function to apply hover effects
-      function setHoverEffect(buttonId, colors) {
-        var button = document.getElementById(buttonId);
-        button.addEventListener("mouseover", function () {
-          this.style.backgroundColor = getRandomColor(colors);
-        });
-        button.addEventListener("mouseout", function () {
-          this.style.backgroundColor = "white";
-        });
-      }
-
-      // Generate a random skew transformation
-      function getRandomTransform() {
-        var skewX = Math.random() * 50 - 25; // Skew range from -25deg to +25deg
-        var skewY = Math.random() * 50 - 25;
-        return `skew(${skewX}deg, ${skewY}deg)`;
-      }
-
-      // Get a random color from an array
-      function getRandomColor(colors) {
-        return colors[Math.floor(Math.random() * colors.length)];
-      }
-
-      // Display the current image in the carousel
-      let currentImageIndex = 0;
-      const images = document.querySelectorAll(".carousel .image-test");
-      function showCurrentImage() {
-        images.forEach((img, index) => {
-          img.style.display = index === currentImageIndex ? "block" : "none";
-        });
-      }
-
-      // Navigate to the next image
-      function nextImage() {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        showCurrentImage();
-      }
-    </script>
+    <script src="/script.js"></script>
   </body>
 </html>
