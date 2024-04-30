@@ -1,98 +1,140 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>project page example</title>
-        <link  rel="stylesheet" href="rooms.css">
-        <link rel="stylesheet" href="https://use.typekit.net/oom6xvm.css">
-        <meta name="'viewport" content="width=device-width,initial-scale=1.0">
-    </head>
-
-    <!-- PROJECT PAGE EXAMPLE-->
-
-    <body>
-
-        <div class="wrapper">
-            
-            <div class="header">
-                <a href="index.html" class="logo-link">
-                    <img src="black-secondary-2.3png.png" class="logo">
-                </a>
-                <div class="buttons">
-                    <a href="about.html" id="aboutBtn">ABOUT</a>
-                    <button id="openBtn">DIRECTORY</button>
-                </div>
-
-            </div>
-
-            <div id="directory" class="slide-out">
-               <div class="directory-content">
-                    <button id="closeBtn">X</button>
-               </div>
-            </div>
-            
-            <div class="main project">
-                <div class="project-wrapper">
-                    <div class="carousel-container">
-                        <div class="carousel">
-                            <img src="test.jpeg" class="image-test">
-                        </div>
-                    </div>
-                    <div class="student-info-container">
-                        <div class="cube">
-                            <div class="face front">
-                                <div class="overflow-hidden">
-                                    <!-- Your project description text here -->
-
-                                    <p class="project-title">PROJECT TITLE</p>
-                                    <p class="project-description">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim.</p>
-
-            <p class="name">FULL NAME | Instagram Portfolio</p>
-
-
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Additional faces (back, left, right, top, bottom) can be added if needed -->
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-
-
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B O B - S M I T H</title>
+    <link rel="stylesheet" href="rooms.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/oom6xvm.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <a href="index.html" class="logo-link">
+          <img src="black-secondary-2.3png.png" alt="Logo" class="logo" />
+        </a>
+        <div class="buttons">
+          <a href="office.html" id="openBtn" class="button-link"
+            ><span>OFFICE</span></a
+          >
         </div>
-        <script src="script.js"></script>
-        <script>
-            function adjustCubeSize() {
-    const cube = document.querySelector('.cube');
-    const minViewportDim = Math.min(window.innerWidth, window.innerHeight);
-    const cubeSize = minViewportDim * 0.9; // Adjust size as needed
-    cube.style.width = cubeSize + 'px';
-    cube.style.height = cubeSize + 'px';
-
-    const fontSize = minViewportDim / 50; // Adjust divisor as needed for font size scaling
-    const faces = document.querySelectorAll('.face');
-    faces.forEach(face => face.style.fontSize = fontSize + 'px');
-}
-
-// Adjust cube size and font size on initial load and window resize
-window.addEventListener('load', adjustCubeSize);
-window.addEventListener('resize', adjustCubeSize);
-
-        </script>
-    </body>
-
-
-
-
-
-
-
+      </div>
+      <main class="main project">
+        <div class="project-wrapper">
+          <div class="carousel-container">
+            <div class="carousel">
+              <img src="test-image01.jpeg" class="image-test" />
+              <img src="test-image02.jpeg" class="image-test" />
+              <img src="test-image03.jpeg" class="image-test" />
+            </div>
+            <button id="nextButton"></button>
+          </div>
+          <div class="student-info-container">
+            <div class="overflow-hidden">
+              <p class="project-title">PROJECT TITLE</p>
+              <p class="project-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                nec velit massa. Nunc sodales erat id diam eleifend, at
+                tristique nisi laoreet. Curabitur diam lectus, viverra eu augue
+                quis, efficitur consectetur turpis. Fusce fringilla massa ac
+                scelerisque dignissim. Sed porta placerat dolor suscipit
+                sollicitudin. Maecenas sodales enim ut tellus ultrices, non
+                suscipit erat cursus. Morbi lorem felis, feugiat a magna nec,
+                ullamcorper suscipit sapien. Nulla facilisi. Proin ultricies
+                aliquam est, id euismod diam vulputate at. Vestibulum hendrerit
+                felis sem, vitae imperdiet lacus congue sit amet. Fusce aliquet
+                ac erat non gravida. Curabitur velit quam, ullamcorper non
+                varius et, volutpat ut dolor. Vestibulum rutrum nunc a hendrerit
+                blandit. Nullam efficitur pretium sollicitudin. Aliquam vitae
+                risus purus. Cras a velit non ipsum semper ultricies auctor eget
+                nulla. Etiam quis volutpat urna, nec condimentum orci. Praesent
+                rutrum eget urna eu egestas. Integer id euismod augue. Fusce ut
+                massa nibh. Praesent et risus iaculis, semper erat in, vehicula
+                justo. Vestibulum ante ipsum primis in faucibus orci luctus et
+                ultrices posuere cubilia curae; Nunc dictum sagittis risus, at
+                dignissim nibh feugiat vel. Fusce sed tempor dolor.
+              </p>
+              <p class="name">FULL NAME | Instagram Portfolio</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // Debug: Log to see if script started
+          console.log("DOM fully loaded and parsed");
+      
+          // Skewing functions
+          var classesToSkew = ["button-link"];
+          classesToSkew.forEach(function (className) {
+            var elements = document.querySelectorAll("." + className);
+            elements.forEach(function (element) {
+              wrapTextInSpan(element);
+              var span = element.querySelector("span");
+              if (span) {
+                applyRandomSkew(span);
+              }
+            });
+          });
+      
+          function wrapTextInSpan(element) {
+            if (element.childNodes.length === 1 && element.childNodes[0].nodeType === Node.TEXT_NODE) {
+              var text = element.childNodes[0].nodeValue.trim();
+              var span = document.createElement("span");
+              span.textContent = text;
+              element.innerHTML = "";
+              element.appendChild(span);
+            }
+          }
+      
+          function applyRandomSkew(span) {
+            var maxSkew = 25;
+            var skewX = (Math.random() - 0.5) * maxSkew;
+            var skewY = (Math.random() - 0.5) * maxSkew;
+            span.style.display = "inline-block";
+            span.style.transform = `skew(${skewX}deg, ${skewY}deg)`;
+          }
+      
+          // Image display and navigation
+          const postItColors = ["#ffadad", "#ffd6a5", "#fdffb6", "#caffbf", "#9bf6ff", "#a0c4ff", "#bdb2ff", "#ffc6ff"];
+          setHoverEffect("openBtn", postItColors);
+          setHoverEffect("nextButton", postItColors);
+      
+          let currentImageIndex = 0;
+          const images = document.querySelectorAll(".carousel .image-test");
+          console.log("Total images found: " + images.length); // Debug: Log total images found
+      
+          function showCurrentImage() {
+            images.forEach((img, index) => {
+              img.style.display = index === currentImageIndex ? "block" : "none";
+            });
+          }
+      
+          function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showCurrentImage();
+          }
+      
+          document.getElementById("nextButton").addEventListener("click", nextImage);
+      
+          showCurrentImage(); // Initial call to show the first image
+        });
+      
+        function setHoverEffect(buttonId, colors) {
+          const button = document.getElementById(buttonId);
+          button.addEventListener("mouseover", () => {
+            button.style.backgroundColor = getRandomColor(colors);
+          });
+          button.addEventListener("mouseout", () => {
+            button.style.backgroundColor = "white";
+          });
+        }
+      
+        function getRandomColor(colors) {
+          return colors[Math.floor(Math.random() * colors.length)];
+        }
+      </script>
+      
+  </body>
 </html>

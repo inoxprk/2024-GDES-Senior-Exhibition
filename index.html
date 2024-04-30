@@ -1,47 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OPEN HOUSE</title>
+    <title>O P E N - H O U S E</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="https://use.typekit.net/oom6xvm.css" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <style>
-        /* Existing and modified styles here */
-        .panel {
-          position: fixed;
-          top: 70px;
-          width: 50%;
-          height: 100%;
-          background-color: white;
-          transition: transform 0.5s ease;
-          overflow-y: auto;
-          z-index: 1000;
-        }
-  
-        #leftPanel {
-          left: 0;
-          transform: translateX(-100%);
-        }
-  
-        #rightPanel {
-          right: 0;
-          transform: translateX(100%);
-        }
-  
-        /* Flexbox layout for panels */
-        .main-container {
-          display: flex;
-          height: calc(100vh - 70px); /* Adjust height as needed */
-        }
-  
-        .panel-content {
-          display: flex; /* Each panel content uses flexbox */
-          flex-direction: column; /* Stack content vertically */
-          align-items: start; /* Align paragraphs to the start */
-          overflow-y: auto;
-          height: 100%;
-        }
-      </style>
   </head>
 
   <body>
@@ -51,474 +14,15 @@
           <img src="black-secondary-2.3png.png" class="logo" />
         </a>
         <div class="buttons">
-          <a href="about.html" id="aboutBtn">ABOUT</a>
-          <button id="openBtn">DIRECTORY</button>
-          <!-- Replaced openBtn with toggleButton -->
-        </div>
-      </div>
-
-      <div id="leftPanel" class="panel">
-        <div class="panel-content">
-          <!-- Dummy content for scrolling -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <!-- Repeat or add more paragraphs as needed to ensure scrolling -->
-        </div>
-      </div>
-      <div id="rightPanel" class="panel">
-        <div class="panel-content">
-          <!-- Mirror dummy content for right panel -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula massa, varius a, semper congue, euismod non, mi. Proin
-            porttitor, orci nec nonummy molestie, enim est eleifend mi, non
-            fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa,
-            scelerisque vitae, consequat in, pretium a, enim. Pellentesque
-            congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum
-            bibendum augue. Praesent egestas leo in pede. Praesent blandit odio
-            eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque
-            fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-          </p>
-          <p>
-            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-            orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-            ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-            sapien eros vitae ligula. Pellentesque rhoncus nunc et augue.
-            Integer id felis. Curabitur aliquet pellentesque diam. Integer quis
-            metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Morbi vel erat non mauris convallis
-            vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
-            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat.
-            Proin feugiat, augue non elementum posuere, metus purus iaculis
-            lectus, et tristique ligula justo vitae magna.
-          </p>
-          <!-- Repeat or add more paragraphs as needed to ensure scrolling -->
+          <a id="aboutBtn" class="about">ABOUT</a>
         </div>
       </div>
 
       <div class="wrapper">
+        <div id="infoCircle" style="visibility: hidden">
+          WELCOME!
+        </div>
+
         <div class="left a">
           <div class="row a">
             <a href="attic.html" class="attic">ATTIC </a>
@@ -608,75 +112,119 @@
       </div>
     </div>
     <script>
-      document.getElementById("openBtn").addEventListener("click", function () {
-        var leftPanel = document.getElementById("leftPanel");
-        var rightPanel = document.getElementById("rightPanel");
-        // Toggle panels
-        if (leftPanel.style.transform === "translateX(0%)") {
-          leftPanel.style.transform = "translateX(-100%)";
-          rightPanel.style.transform = "translateX(100%)";
-        } else {
-          leftPanel.style.transform = "translateX(0%)";
-          rightPanel.style.transform = "translateX(0%)";
-        }
-      });
+      document.addEventListener("DOMContentLoaded", function () {
+        var classesToSkew = [
+          "about",
+          "attic",
+          "bedroom-type",
+          "study",
+          "entryway",
+          "dining-room",
+          "living-room",
+          "kitchen",
+          "backyard",
+          "attic-3",
+          "bedroom-type",
+          "study-3",
+          "entryway-3",
+          "diningroom-3",
+          "livingroom-3",
+          "kitchen-3",
+          "backyard-3",
+        ];
 
-      var leftPanelContent = document.getElementById("leftPanel");
-      var rightPanelContent = document.getElementById("rightPanel");
-
-      leftPanelContent.addEventListener("scroll", function () {
-        rightPanelContent.scrollTop = this.scrollTop;
-      });
-
-      rightPanelContent.addEventListener("scroll", function () {
-        leftPanelContent.scrollTop = this.scrollTop;
-      });
-
-      document.addEventListener('DOMContentLoaded', function() {
-    var classesToSkew = ['attic', 'bedroom-type', 'study', 'entryway', 'dining-room', 'living-room', 'kitchen', 'backyard', 'attic-3', 'bedroom-type', 'study-3', 'entryway-3', 'diningroom-3', 'livingroom-3', 'kitchen-3', 'backyard-3'];
-
-    classesToSkew.forEach(function(className) {
-        var elements = document.querySelectorAll('.' + className);
-        elements.forEach(function(element) {
-            // Ensure text is wrapped in a span for animation
-            var span;
-            if (element.childNodes.length && element.childNodes[0].nodeType === Node.TEXT_NODE) {
-                var text = element.childNodes[0].nodeValue.trim();
-                span = document.createElement('span');
-                span.textContent = text;
-                element.innerHTML = '';
-                element.appendChild(span);
-            } else if (element.firstChild && element.firstChild.tagName === "SPAN") {
-                span = element.firstChild;
-            } else {
-                return;
+        classesToSkew.forEach(function (className) {
+          var elements = document.querySelectorAll("." + className);
+          elements.forEach(function (element) {
+            // Ensure text is wrapped in a span for skewing
+            wrapTextInSpan(element);
+            var span = element.querySelector("span");
+            if (span) {
+              applyRandomSkew(span);
             }
-
-            animateElement(span);
+          });
         });
-    });
 
-    function animateElement(element) {
-        var duration = 1000 + Math.random() * 1500;
-        var maxSkew = 15 + Math.random() * 15;
-        var maxScale = 0.25 + Math.random() * 0.05;
-        var skewDirection = Math.random() < 0.5 ? -1 : 1;
-        var scaleDirection = Math.random() < 0.5 ? -1 : 1;
-
-        function step(timestamp) {
-            var progress = (timestamp % duration) / duration; // Progress through the current cycle
-            var skewX = maxSkew * Math.sin(progress * 2 * Math.PI) * skewDirection;
-            var skewY = maxSkew * Math.cos(progress * 2 * Math.PI) * skewDirection;
-            var scale = 1 + maxScale * Math.sin(progress * 2 * Math.PI) * scaleDirection;
-
-            element.style.transform = `skew(${skewX}deg, ${skewY}deg) scale(${scale})`;
-            requestAnimationFrame(step);
+        function wrapTextInSpan(element) {
+          if (
+            element.childNodes.length === 1 &&
+            element.childNodes[0].nodeType === Node.TEXT_NODE
+          ) {
+            var text = element.childNodes[0].nodeValue.trim();
+            var span = document.createElement("span");
+            span.textContent = text;
+            element.innerHTML = "";
+            element.appendChild(span);
+          }
         }
 
-        requestAnimationFrame(step);
-    }
-});
+        function applyRandomSkew(span) {
+          var maxSkew = 25;
+          var skewX = (Math.random() - 0.75) * maxSkew;
+          var skewY = (Math.random() - 0.75) * maxSkew;
 
+          span.style.display = "inline-block"; // Ensures the span can transform properly
+          span.style.transform = `skew(${skewX}deg, ${skewY}deg)`;
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var classesToColor = [
+          "about",
+          "attic",
+          "bedroom-type",
+          "study",
+          "entryway",
+          "dining-room",
+          "living-room",
+          "kitchen",
+          "backyard",
+          "attic-3",
+          "bedroom-type",
+          "study-3",
+          "entryway-3",
+          "diningroom-3",
+          "livingroom-3",
+          "kitchen-3",
+          "backyard-3",
+        ];
+        var postItColors = [
+          "#ffadad",
+          "#ffd6a5",
+          "#fdffb6",
+          "#caffbf",
+          "#9bf6ff",
+          "#a0c4ff",
+          "#bdb2ff",
+          "#ffc6ff",
+        ]; // Define your warm post-it colors here
+
+        classesToColor.forEach(function (className) {
+          var elements = document.querySelectorAll("." + className);
+          elements.forEach(function (element) {
+            element.addEventListener("mouseenter", function () {
+              var randomColor =
+                postItColors[Math.floor(Math.random() * postItColors.length)];
+              this.style.backgroundColor = randomColor;
+            });
+            element.addEventListener("mouseleave", function () {
+              this.style.backgroundColor = ""; // Reset to default or specify a different color
+            });
+          });
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var aboutBtn = document.getElementById("aboutBtn");
+        var infoCircle = document.getElementById("infoCircle");
+        aboutBtn.addEventListener("click", function () {
+          if (infoCircle.style.visibility === "visible") {
+            infoCircle.style.visibility = "hidden";
+          } else {
+            infoCircle.style.visibility = "visible";
+          }
+        });
+      });
     </script>
   </body>
 </html>

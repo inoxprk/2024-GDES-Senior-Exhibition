@@ -11,13 +11,14 @@ body {
   margin: 0;
   font-family: "neue-haas-unica";
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 a {
   color: black;
   text-decoration: none; /* Remove underline */
   font-family: "CustomerCopy", sans-serif;
-  font-size: 1.7em;
+  font-size: 2.5vh;
 }
 
 .main-container {
@@ -100,9 +101,8 @@ a {
 
   margin-right: 10px;
 
-  font-family: "neue-haas-unica";
-  font-weight: 500;
-  font-size: 8pt;
+  font-family: "CustomerCopy", sans-serif;
+  font-size: 1.7em;
 }
 
 #aboutBtn:hover {
@@ -168,6 +168,7 @@ a {
 
   margin-top: 90px;
   padding-bottom: 20px;
+  z-index: 2;
 }
 
 .left {
@@ -498,6 +499,8 @@ a {
   .right {
     display: none;
   }
+
+
 }
 
 @media screen and (min-width: 700px) {
@@ -685,4 +688,30 @@ a {
     border-left: solid black 2px;
     border-right: solid black 2px;
   }
+
+  
+}
+
+#infoCircle {
+  position: fixed; /* Makes it appear over the content */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Adjust the centering to the div's own size */
+  width: 40%; /* Or any width you prefer */
+  height: 350px; /* Or any height you prefer */
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 30px;
+  visibility: hidden; /* Start hidden */
+  z-index: 10; /* Ensure it's on top of other content */
+  display: flex; /* Use flexbox to center the text */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 50px;
+  font-size: 40px;
+  font-family: "CustomerCopy";
 }
