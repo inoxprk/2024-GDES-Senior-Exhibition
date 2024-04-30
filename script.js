@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
     // Function to fetch project data based on the person's name
     function fetchProjectDataByPerson(personName, projects) {
         return projects.find(function(project) {
@@ -112,6 +111,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Change document title
         document.title = projectData.Name.split(' ')[0].toUpperCase().split('').join(' ');
+
+        // Room name skew logic
+        // Skewing functions
+        var classesToSkew = ["button-link"];
+        classesToSkew.forEach(function (className) {
+          var elements = document.querySelectorAll("." + className);
+          elements.forEach(function (element) {
+            wrapTextInSpan(element);
+            var span = element.querySelector("span");
+            if (span) {
+              applyRandomSkew(span);
+            }
+          });
+        });
+    
+        function wrapTextInSpan(element) {
+          if (element.childNodes.length === 1 && element.childNodes[0].nodeType === Node.TEXT_NODE) {
+            var text = element.childNodes[0].nodeValue.trim();
+            var span = document.createElement("span");
+            span.textContent = text;
+            element.innerHTML = "";
+            element.appendChild(span);
+          }
+        }
+    
+        function applyRandomSkew(span) {
+          var maxSkew = 25;
+          var skewX = (Math.random() - 0.5) * maxSkew;
+          var skewY = (Math.random() - 0.5) * maxSkew;
+          span.style.display = "inline-block";
+          span.style.transform = `skew(${skewX}deg, ${skewY}deg)`;
+        }
+
     }
 
     // AJAX request to fetch the JSON data
@@ -141,4 +173,3 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     xhr.open("GET", "../../data.json", true); // Adjusted URL to fetch data.json from the root
     xhr.send();
-});
