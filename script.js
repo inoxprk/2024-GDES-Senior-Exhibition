@@ -26,7 +26,7 @@
 
         // Clear any existing content
         artistName.innerHTML = "";
-        projectTitle.innerHTML = "";
+        // projectTitle.innerHTML = "";
         projectDescription.innerHTML = "";
 
         // Set project information
